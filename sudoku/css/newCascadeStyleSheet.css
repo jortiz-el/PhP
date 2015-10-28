@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28-oct-2015, 12:13:05
+    Author     : casa
+*/
+h1 {
+    color: lightsteelblue;
+    text-align: center;
+}
+.centrar{
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+}
+.rojo{
+    color: red;
+}
+.verde{
+    color: green;
+}
+td {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+}
+input{
+    width: 20px;
+}
+input[type='submit']{
+    width: 50px;
+}
