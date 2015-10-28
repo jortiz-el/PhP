@@ -10,6 +10,7 @@
     <body>
         <div>
           <h1>Juego de conecta 4</h1>
+          <h3>Sigue jugando</h3>
           <form action='compruebaGanador.php' method='post'>
              <?php
              
