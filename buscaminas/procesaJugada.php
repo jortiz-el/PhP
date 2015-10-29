@@ -11,18 +11,26 @@ if (isset($_POST['submit'])){
                     $minas[$i][$j] = '';
                 }
             }
+            //funcion para comprobar si hay minas
+            function colocaminas($array,$f,$c){
+                $bool = 0;
+                
+                for ($i = $f-1; $i <= $f+1; $i++){
+                    for ($j = $c-1; $j <= $c+1; $j++) {
+                        if (isset($array[$i][$j]) && $array[$i][$j] === '*' ){
+                            $bool = 1;
+                        }
+                    }
+                }
+                return $bool;
+            }
             //colocar 10 minas aleatorias
             $num = 0;
             do{
                 $i = rand(0, 9);
                 $j = rand(0, 9);
 
-                if ((isset($minas[$i-1][$j-1]) && $minas[$i-1][$j-1] === '*') || (isset($minas[$i-1][$j]) && $minas[$i-1][$j] === '*') ||
-                        (isset($minas[$i-1][$j+1]) && $minas[$i-1][$j+1] === '*') || (isset($minas[$i][$j-1]) && $minas[$i][$j-1] === '*') ||
-                        (isset($minas[$i][$j+1]) && $minas[$i][$j+1] === '*') || (isset($minas[$i+1][$j-1]) && $minas[$i+1][$j-1] === '*') ||
-                        (isset($minas[$i+1][$j]) && $minas[$i+1][$j] === '*') || (isset($minas[$i+1][$j+1]) && $minas[$i+1][$j+1] === '*') ||
-                        (isset($minas[$i][$j]) && $minas[$i][$j] === '*')) {
-               
+                if (colocaminas($minas, $i, $j)) {
                     $num --;
                 } else {
                     $minas[$i][$j] = '*'; 
