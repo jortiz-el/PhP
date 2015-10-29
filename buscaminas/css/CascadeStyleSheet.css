@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21-sep-2015, 19:40:47
+    Author     : 2daw
+*/
+h1{
+    color: lightsteelblue;
+    text-align: center;
+}
+div{
+    
+    width: 450px;
+    height: 700px;
+    margin: auto;
+    padding: 20px;
+    padding-top: 40px;
+    text-align: center;
+}
+p.centrar{
+    text-align: center;
+    margin: auto;
+}
+.submit{
+    width: 70px;
+    height: 30px;
+    background-color: lightsteelblue;    
+    margin: 0px;
+    margin-top: 10px;
+    float: right;
+}
+.tabla{ 
+    border: 1px solid lightsteelblue;
+    text-align: center;
+    margin: auto;
+    
+}
+
+tr,td{
+    
+    border: 1px solid lightsteelblue;
+    width: 40px;
+    height: 40px;
+}
+td:hover{
+    background-color: lightyellow;
+}
+input[type='text']{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 30px;
+}
