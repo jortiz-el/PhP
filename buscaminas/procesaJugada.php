@@ -12,7 +12,7 @@ if (isset($_POST['submit'])){
                 }
             }
             //funcion para comprobar si hay minas
-            function colocaminas($array,$f,$c){
+            function hayMinas($array,$f,$c){
                 $bool = 0;
                 
                 for ($i = $f-1; $i <= $f+1; $i++){
@@ -30,7 +30,7 @@ if (isset($_POST['submit'])){
                 $i = rand(0, 9);
                 $j = rand(0, 9);
 
-                if (colocaminas($minas, $i, $j)) {
+                if (hayMinas($minas, $i, $j)) {
                     $num --;
                 } else {
                     $minas[$i][$j] = '*'; 
