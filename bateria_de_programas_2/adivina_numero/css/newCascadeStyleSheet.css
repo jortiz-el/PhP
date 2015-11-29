@@ -1,0 +1,14 @@
+div {
+    width: 700px;
+    margin: auto;    
+}
+h1 {
+    color: lightsteelblue;
+}
+input[type='number'] {
+    width: 40px;
+}
+input[type='submit']:hover {
+    border: 1px solid lightslategray;
+    background-color: lightsteelblue;
+}
