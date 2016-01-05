@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<clasificacion>
+  <equipo id="real">
+    <puntos>6</puntos>
+    <gol_favor>5</gol_favor>
+    <gol_contra>0</gol_contra>
+    <gol_average>5</gol_average>
+  </equipo>
+  <equipo id="atleti">
+    <puntos>3</puntos>
+    <gol_favor>2</gol_favor>
+    <gol_contra>1</gol_contra>
+    <gol_average>1</gol_average>
+  </equipo>
+  <equipo id="valencia">
+    <puntos>3</puntos>
+    <gol_favor>3</gol_favor>
+    <gol_contra>6</gol_contra>
+    <gol_average>-3</gol_average>
+  </equipo>
+  <equipo id="barca">
+    <puntos>0</puntos>
+    <gol_favor>2</gol_favor>
+    <gol_contra>5</gol_contra>
+    <gol_average>-3</gol_average>
+  </equipo>
+</clasificacion>

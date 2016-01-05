@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<partidas>
+  <partida id="7">
+    <jugada id="2">
+      <letra>o</letra>
+      <palabra_descubierta>_o_o</palabra_descubierta>
+    </jugada>
+    <jugada id="2">
+      <letra>b</letra>
+      <palabra_descubierta>_obo</palabra_descubierta>
+    </jugada>
+    <jugada id="2">
+      <letra>l</letra>
+      <palabra_descubierta>lobo</palabra_descubierta>
+    </jugada>
+  </partida>
+  <partida id="8">
+    <jugada id="2">
+      <letra>e</letra>
+      <palabra_descubierta>_e____</palabra_descubierta>
+    </jugada>
+    <jugada id="2">
+      <letra>l</letra>
+      <palabra_descubierta>_el___</palabra_descubierta>
+    </jugada>
+    <jugada id="2">
+      <letra>t</letra>
+      <palabra_descubierta>_el_t_</palabra_descubierta>
+    </jugada>
+    <jugada id="2">
+      <letra>o</letra>
+      <palabra_descubierta>_elot_</palabra_descubierta>
+    </jugada>
+    <jugada id="2">
+      <letra>a</letra>
+      <palabra_descubierta>_elota</palabra_descubierta>
+    </jugada>
+    <jugada id="2">
+      <letra>p</letra>
+      <palabra_descubierta>pelota</palabra_descubierta>
+    </jugada>
+  </partida>
+</partidas>
