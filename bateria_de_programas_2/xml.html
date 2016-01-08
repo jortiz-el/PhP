@@ -1,0 +1,32 @@
+<?php
+$enlace = "..\clasificacion.xml";
+header ("Content-Disposition: attachment; filename=clasificacion.xml ");
+header ("Content-Type: application/xml");
+readfile($enlace);
+
+
+
+$xmlstr = <<<XML
+        <clasificacion>
+        </clasificacion>
+XML;
+    $xml = new SimpleXMLElement($xmlstr);
+    foreach ($clasificacion as $equipo => $datos){
+        $ligaXML = $xml->addChild('equipo');
+        $ligaXML->addAttribute('id', $equipo);
+        $ligaXML->addChild("puntos", $datos['puntos']);
+        $ligaXML->addChild("gol_favor", $datos['golF']);
+        $ligaXML->addChild("gol_contra", $datos['golC']);
+        $ligaXML->addChild("gol_average", $datos['golA']);
+        "<br>";
+    }
+    //Guardar documento xml
+    $dom = new DOMDocument('1.0');
+    $dom->preserveWhiteSpace = false;
+    $dom->formatOutput = true;
+    $dom->loadXML($xml->asXML());
+    $dom->save('clasificacion.xml');
+
+    
+?>
+
