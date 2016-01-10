@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-01-2016 a las 21:03:12
--- Versión del servidor: 5.6.26
--- Versión de PHP: 5.6.12
+-- Tiempo de generación: 10-01-2016 a las 15:55:27
+-- Versión del servidor: 10.1.8-MariaDB
+-- Versión de PHP: 5.6.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,7 +26,8 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `apuntes`
 --
 
-CREATE TABLE IF NOT EXISTS `apuntes` (
+CREATE TABLE `apuntes` (
+  `id_usuario` int(11) NOT NULL,
   `tipo` varchar(20) NOT NULL,
   `concepto` varchar(40) NOT NULL,
   `cantidad` int(11) NOT NULL,
@@ -37,15 +38,15 @@ CREATE TABLE IF NOT EXISTS `apuntes` (
 -- Volcado de datos para la tabla `apuntes`
 --
 
-INSERT INTO `apuntes` (`tipo`, `concepto`, `cantidad`, `fecha`) VALUES
-('ingresos', 'vacaciones', 2000, '2015-01-10'),
-('ingresos', 'nominas', 3000, '2015-01-01'),
-('gastos', 'comida', 300, '2015-01-25'),
-('gastos', 'luz', 200, '2015-01-20'),
-('gastos', 'agua', 50, '2015-01-15'),
-('ingresos', 'sueldo', 2000, '2015-01-30'),
-('gastos', 'productos ', 70, '2015-01-12'),
-('gastos', 'colegio niÃ±os ', 500, '2015-01-19');
+INSERT INTO `apuntes` (`id_usuario`, `tipo`, `concepto`, `cantidad`, `fecha`) VALUES
+(1, 'ingresos', 'salario', 2000, '2015-01-01'),
+(1, 'gastos', 'luz', 200, '2015-01-15'),
+(10, 'gastos', 'vacaciones', 1500, '2015-01-31'),
+(10, 'gastos', 'ropa', 300, '2015-01-01'),
+(1, 'ingresos', 'venta pc', 700, '2015-01-15'),
+(1, 'ingresos', 'salario', 3000, '2015-01-31'),
+(1, 'gastos', 'reyes', 800, '2015-01-06'),
+(1, 'ingresos', 'comida', 200, '2015-01-10');
 
 -- --------------------------------------------------------
 
@@ -53,18 +54,20 @@ INSERT INTO `apuntes` (`tipo`, `concepto`, `cantidad`, `fecha`) VALUES
 -- Estructura de tabla para la tabla `usuario`
 --
 
-CREATE TABLE IF NOT EXISTS `usuario` (
+CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `usuario` varchar(20) NOT NULL,
   `clave` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `usuario`, `clave`) VALUES
-(1, 'joao', 'joao');
+(1, 'joao', 'joao'),
+(7, '', ''),
+(10, 'perico', 'perico');
 
 --
 -- Índices para tablas volcadas
@@ -74,7 +77,8 @@ INSERT INTO `usuario` (`id`, `usuario`, `clave`) VALUES
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `usuario` (`usuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -84,7 +88,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
