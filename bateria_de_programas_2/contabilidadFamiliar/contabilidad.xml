@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<contabilidad>
+  <tipo tipo="gastos">
+    <concepto>vacaciones</concepto>
+    <cantidad>1500</cantidad>
+    <fecha>2015-01-31</fecha>
+  </tipo>
+  <tipo tipo="gastos">
+    <concepto>ropa</concepto>
+    <cantidad>300</cantidad>
+    <fecha>2015-01-01</fecha>
+  </tipo>
+</contabilidad>
