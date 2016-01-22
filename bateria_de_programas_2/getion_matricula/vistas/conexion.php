@@ -8,14 +8,13 @@ if ($view !== "conexion") {
 ?>
 <html>
     <head>
-        <title>Contabilidad Familiar</title>
+        <title>Gestion Matricula</title>
         <link rel="stylesheet" href="../css/newCascadeStyleSheet.css"/>
-        <meta charset="UTF-8" />
-        
+        <meta charset="UTF-8">
     </head>
     <body>
         <div class="centrado">
-            <h1 >Contabilidad Familiar</h1>
+            <h1 >Gestion Matricula</h1>
         <?php
             if (isset($errormsg)) {
                 echo "<h2 class='rojo'>$errormsg</h2>";
@@ -30,7 +29,6 @@ if ($view !== "conexion") {
                 <label>Contraseña: </label>
                 <input type="text" name="clave" size="10" />
                 <input type="submit" name="conexion" value="Entrar" />
-                <input type="submit" name="registro" value="Registro" />
             </form>
         </div>
         </div>

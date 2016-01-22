@@ -10,6 +10,7 @@ if ($view !== "registro") {
     <head>
         <title>Contabilidad Familiar</title>
         <link rel="stylesheet" href="../css/newCascadeStyleSheet.css"/>
+        <meta charset="UTF-8" />
     </head>
     <body>
         <div class="centrado">

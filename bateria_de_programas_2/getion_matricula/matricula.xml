@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<matricula>
+  <grupo grupo="1ESOA">
+    <nombre>joao</nombre>
+    <apellido1>ortiz</apellido1>
+    <apellido2>alegre</apellido2>
+    <edad>18</edad>
+    <sexo>varon</sexo>
+  </grupo>
+  <grupo grupo="1ESOA">
+    <nombre>jogui</nombre>
+    <apellido1>ortiz</apellido1>
+    <apellido2>alegre</apellido2>
+    <edad>34</edad>
+    <sexo>macho</sexo>
+  </grupo>
+  <grupo grupo="1ESOA">
+    <nombre>ahora</nombre>
+    <apellido1>si</apellido1>
+    <apellido2>heif</apellido2>
+    <edad>8</edad>
+    <sexo>varon</sexo>
+  </grupo>
+</matricula>

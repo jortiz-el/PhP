@@ -18,9 +18,9 @@ if (isset($_SESSION['usuario'])) {
         $view = 'ingresos';
         include 'vistas/ingresos.php'; 
     } else if (isset($_POST['enviar'])){
-       $apuntes = new Apuntes($usuario->getId(),$_POST['tipo'], $_POST['concepto'], $_POST['cantidad'], $_POST['fecha']);
-       $apuntes->persist();
-       $usuario->setApuntes(Apuntes::getApuntes($usuario->getId()));
+       $apunte = new Apuntes($usuario->getId(),$_POST['tipo'], $_POST['concepto'], $_POST['cantidad'], $_POST['fecha']);
+       $usuario->addApunte($apunte);
+       
        $_SESSION['usuario'] = $usuario;
        $view = 'apuntes';
        include 'vistas/apuntes.php';  

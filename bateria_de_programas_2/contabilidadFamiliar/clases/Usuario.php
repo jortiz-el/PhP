@@ -41,7 +41,11 @@ class Usuario {
         }
         return $valido;
     }
-    function getUsuario() {
+    public function addApunte($apunte) {
+        $this->apuntes->add($apunte);
+        $apunte->persist();
+    }
+            function getUsuario() {
         return $this->usuario;
     }
 
