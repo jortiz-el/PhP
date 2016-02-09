@@ -15,36 +15,32 @@
 				<header>
 					<h2>Diseños<span> mas buscados</span></h2>
 				</header>	
-					<article id="masbuscados">
-						
-						<ul>
-							<li id="musica">
-								<a href="#">Música</a>
-							</li>
-							<li id="deportes">
-								<a href="#">Deportes</a>
-							</li>
-							<li id="freak">
-								<a href="#">Freak</a>
-							</li>
-							<li id="video">
-								<a href="#">Video Juegos</a>
-							</li>
-							<li id="humor">
-								<a href="#">Humor</a>
-							</li>
-							<li id="series">
-								<a href="#">Series</a>
-							</li>
-							<li id="retro">
-								<a href="#">Retro</a>
-							</li>
-							<li id="peliculas">
-								<a href="#">Peliculas</a>
-							</li>
-						</ul>
-					
-					</article>
+				<div class="container row">
+
+					@foreach ($productos as $producto)
+					@if ($producto->descuento === 1)
+						<div class="col-md-4 out_margin">
+								<div class="ribbon"><span>OFERTA</span></div>
+							<div class="div-img">
+							    <img class="img" src="{{ asset('imagenes/prod/'.$producto->imagen.'.jpg') }}" title="starwars" alt="amarillo">
+							    <div class="text_img">{{ $producto->disenio }}</div>
+							    <div class="text_img textprice"><span class="descuento">{{ $producto->precio }}€ </span>{{ $producto->precio-4.25 }}€</div>
+				 		 	</div>
+						</div>
+					@else
+						<div class="col-md-4 out_margin">
+							<div class="div-img">
+							    <img class="img" src="{{ asset('imagenes/prod/'.$producto->imagen.'.jpg') }}" title="starwars" alt="amarillo">
+							    <div class="text_img">{{ $producto->disenio }}</div>
+							    <div class="text_img textprice">{{ $producto->precio }}€</div>
+				 		 	</div>
+						</div>
+					@endif
+					@endforeach
+					<div id ="paginate" class="container">
+						{!! $productos->render() !!}
+					</div>
+				</div>
 			</section>
 			<section id ="bannerEnvio">
 				<h1>Envios Gratis</h1>

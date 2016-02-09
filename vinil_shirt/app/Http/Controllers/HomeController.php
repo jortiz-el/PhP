@@ -1,5 +1,7 @@
 <?php namespace Vinil\Http\Controllers;
 
+use Vinil\Productos;
+
 class HomeController extends Controller {
 
 	/*
@@ -30,7 +32,10 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('home');
+		$productos = Productos::orderBy('descripcion', 'ASC')
+		->paginate(9);
+
+		return view('layout.vinil', compact('productos'));
 	}
 
 }

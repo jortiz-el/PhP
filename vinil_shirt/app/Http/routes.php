@@ -32,14 +32,12 @@ Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
+	'auth' 		=> 'Auth\AuthController',
+	'password' 	=> 'Auth\PasswordController',
+	'producto'	=> 'productoController',
 ]);
 
-Route::get("/home/activate/{code}", array(
-	'as' => 'acount-activate',
-	'uses' => 'AcountController@getActivate'
-	));
+
 
 /*
 Route::get('/', 'FrontController@index');

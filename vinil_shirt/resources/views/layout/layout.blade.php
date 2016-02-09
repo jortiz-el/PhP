@@ -50,33 +50,23 @@
 				</section>
 			</section>
 			<nav  id="navegacion">
-				<ul>
-					<li class="nivel1"><a href=''>Inicio</a></li>
-					<li class="nivel1"><a href="#">Diseños</a>
-						<ul>
-							<li><a href="#">Música</a></li>
-							<li><a href="#">Deportes</a></li>
-							<li><a href="#">Freak</a></li>
-							<li><a href="#">Video Juegos</a></li>
-							<li><a href="#">Humor</a></li>
-							<li><a href="#">Series</a></li>
-							<li><a href="#">Retro</a></li>
-							<li><a href="#">Peliculas</a></li>
+				<ul clas="row">
+					<li class="nivel1 col-md-3 dropdown"><a href="/" class="drpdown-toggle" data-toggle="dropdown" role="button">Diseños</a>
+						
+					</li>
+					<li class="nivel1 col-md-3 dropdown"><a href="#" class="drpdown-toggle" data-toggle="dropdown" role="button">Productos</a>
+						<ul class="gris">
+							<li class="navli"><a href="{{ url('/producto') }}">Camiseta corta</a></li>
+							<li class="navli"><a href="{{ url('/producto/camisetach') }}">Camiseta chica</a></li>
+							<li class="navli"><a href="{{ url('/producto/musculosa') }}">musculosa</a></li>
+							<li class="navli"><a href="{{ url('/producto/gorrapl') }}">Gorra plana</a></li>
+							<li class="navli"><a href="{{ url('/producto/gorratr') }}">Gorra trucker</a></li>
+							<li class="navli"><a href="{{ url('/producto/sudadera') }}">sudaderas</a></li>
+							<li class="navli"><a href="{{ url('/producto/sudaderacap') }}">sud. + capucha</a></li>
+							<li class="navli"><a href="{{ url('/producto/taza') }}">Tazas</a></li>
 						</ul> 
 					</li>
-					<li class="nivel1"><a href="#">Productos</a>
-						<ul>
-							<li><a href="#">Camiseta</a></li>
-							<li><a href="#">Camiseta chica</a></li>
-							<li><a href="#">Camiseta corta</a></li>
-							<li><a href="#">musculosa</a></li>
-							<li><a href="#">Gorra plana</a></li>
-							<li><a href="#">Gorra trucker</a></li>
-							<li><a href="#">sudaderas</a></li>
-							<li><a href="#">Tazas</a></li>
-						</ul> 
-					</li>
-					<li class="nivel1"><a href="#">Contacto</a></li>
+					<li class="nivel1 col-md-3 dropdown"><a href="#" class="drpdown-toggle" data-toggle="dropdown" role="button">Contacto</a></li>
 				</ul>
 			</nav>
 			<section class="gris clear" id="boletin" >
@@ -86,7 +76,7 @@
 					<figure id="telefono"></figure>
 					<a href="#">91 661 90 04</a>
 				</nav>
-				<form action="#" method="post">
+				<form action="/" method="post">
 					<label >Boletín</label>
 					<div>
 						<label >Reciba un 10% de descuento por suscribirse</label>

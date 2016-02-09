@@ -1,5 +1,7 @@
 <?php namespace Vinil\Http\Controllers;
 
+use Vinil\Productos;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,8 +32,14 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		//return view('welcome');
-                return view('layout.vinil');
+		
+		$productos = Productos::where('descuento', '<>' ,'1')
+		->orderBy('descripcion', 'ASC')
+		->paginate(9);
+
+        return view('layout.vinil', compact('productos'));
 	}
+
+	
 
 }
