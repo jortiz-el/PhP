@@ -24,19 +24,22 @@
 			</section>
 			<section id="logo" class="cyan">
 				<figure class="cyan" >
-                                    <a href="{{url('/')}}"><img src="{{ asset('imagenes/logo2.png') }}" alt="logo"></a>
+                    <a href="{{url('/')}}"><img src="{{ asset('imagenes/logo2.png') }}" alt="logo"></a>
 				</figure>
 			</section>
 			<section id="producto">
-				<form action="#" method="post">
-					<input type="search" id="search" onfocus="limpiar(this.id)" value="Encuentra productos, diseños..." />
-					<input type="submit" name="submit" value=""/>
+
+				
+
+				<form action="{{ url('/producto/search') }}" method="get" class="navbar-form navbar-left">
+					<input type="search" name="search"  placeholder="Encuentra productos, diseños..." />
+					<input type="submit"  value=""/>
 				</form>
 				
 				<section id="usuario_carrito">
 					<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-                                                <li ><a class="" href="{{ url('/auth/login') }}">Login</a></li>
+                        <li ><a class="" href="{{ url('/auth/login') }}">Login</a></li>
 						<li ><a class="" href="{{ url('/auth/register') }}">Register</a></li>
 					@else
 						<li class="dropdown">
@@ -56,7 +59,7 @@
 					</li>
 					<li class="nivel1 col-md-3 dropdown"><a href="#" class="drpdown-toggle" data-toggle="dropdown" role="button">Productos</a>
 						<ul class="gris">
-							<li class="navli"><a href="{{ url('/producto') }}">Camiseta corta</a></li>
+							<li class="navli"><a href="{{ url('/producto/camiseta') }}">Camiseta corta</a></li>
 							<li class="navli"><a href="{{ url('/producto/camisetach') }}">Camiseta chica</a></li>
 							<li class="navli"><a href="{{ url('/producto/musculosa') }}">musculosa</a></li>
 							<li class="navli"><a href="{{ url('/producto/gorrapl') }}">Gorra plana</a></li>

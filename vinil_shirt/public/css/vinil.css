@@ -6,6 +6,10 @@
 
 
 }
+.button_click {
+	border:none;
+	background-color:transparent;
+}
 .descuento {
 	color: red;
 	text-decoration: line-through;
@@ -351,14 +355,14 @@ header h2::before {
 .text_img {
   z-index: -1;
   position: absolute;
-  top:220px;
+  top:200px;
   display: block;
   width: 100%;
   text-align: center;
   margin: 0px;
 }
 .textprice {
-  top:180px;
+  top:160px;
   color: green;
   font-size: 18px;
 }
@@ -626,4 +630,20 @@ figure#confianza {
 .navbar-right a {
     font-size: 20px;
     color: #16a5a7;
+}
+
+/*-----------descripcion productos----------------*/
+.container_descripcion {
+	height: 400px;
+}
+.desc {
+	font-size: 20px;
+}
+.desc span {
+	font-size: 24px;
+	color: #9f9d9e;
+	font-weight: bold;
+}
+.verde {
+	color:green;
 }
