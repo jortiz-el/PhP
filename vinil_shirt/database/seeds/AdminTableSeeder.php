@@ -13,7 +13,8 @@ class AdminTableSeeder extends Seeder {
 			'name'     => 'Joao',
 			'email'    => 'ojoao@joao.com',
 			'password' => \Hash::make('entrar'),
-			'type'     => 'admin'
+			'type'     => 'admin',
+			'confirmed'=> 1
 			));
 	}
 }

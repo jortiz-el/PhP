@@ -31,11 +31,17 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+Route::get('vinil', function($name = 'Perico', $confirmation_code = '123213'){
+    return view('emails.verify',compact('name', 'confirmation_code'));
+});
+
 Route::controllers([
 	'auth' 		=> 'Auth\AuthController',
 	'password' 	=> 'Auth\PasswordController',
 	'producto'	=> 'productoController',
 ]);
+
+
 
 
 

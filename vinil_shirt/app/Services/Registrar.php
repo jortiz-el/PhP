@@ -3,6 +3,7 @@
 use Vinil\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
+use Mail;
 
 class Registrar implements RegistrarContract {
 
@@ -29,11 +30,26 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
-		return User::create([
+		$confirmation_code = str_random(30);
+
+		$user = User::create([
 			'name' => $data['name'],
 			'email' => $data['email'],
 			'password' => bcrypt($data['password']),
+			'confirmation_code' => $confirmation_code,
 		]);
+
+		$data['confirmation_code'] = $confirmation_code;
+
+		Mail::send('emails.verify', $data, function($message) use ($data)
+            {
+                $message->from('no-reply@Vinil-Shirt.com', "Vinil-Shirt");
+                $message->subject("Welcome to Vinil-Shirt");
+                $message->to($data['email']);
+            });
+
+
+		return $user;
 	}
 
 }
