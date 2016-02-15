@@ -27,6 +27,7 @@ class Kernel extends HttpKernel {
 		'auth' => 'Vinil\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'Vinil\Http\Middleware\RedirectIfAuthenticated',
+		'mail' => 'Vinil\Http\Middleware\RedirectIfValidMail',
 	];
 
 }

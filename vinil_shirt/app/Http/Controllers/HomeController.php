@@ -22,6 +22,7 @@ class HomeController extends Controller {
 	 */
 	public function __construct()
 	{
+		$this->middleware('mail');
 		$this->middleware('auth');
 	}
 
@@ -36,6 +37,12 @@ class HomeController extends Controller {
 		->paginate(9);
 
 		return view('layout.vinil', compact('productos'));
+	}
+
+	public function verify($code) {
+
+		return "hola mundo";
+
 	}
 
 }

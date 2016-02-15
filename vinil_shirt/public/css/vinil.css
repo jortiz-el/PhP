@@ -29,6 +29,12 @@
 	background: linear-gradient(#1dcfd1, #16a5a7);
 	color: white;
 }
+.rojo {
+	background: -webkit-linear-gradient(#D21D1D, #A61616);
+	background: -moz-linear-gradient(#D21D1D, #A61616);
+	background: linear-gradient(#D21D1D, #A61616);
+	color: white;
+}
 .boton {
 	border-radius: 0.5em;
 	border:none;

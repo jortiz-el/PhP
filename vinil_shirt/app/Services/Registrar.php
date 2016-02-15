@@ -1,6 +1,7 @@
 <?php namespace Vinil\Services;
 
 use Vinil\User;
+use Vinil\Profiles;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 use Mail;
@@ -38,6 +39,12 @@ class Registrar implements RegistrarContract {
 			'password' => bcrypt($data['password']),
 			'confirmation_code' => $confirmation_code,
 		]);
+
+		$profile = new Profiles;
+		$profile->user_id = $user->id;
+		$profile->acerca = "";
+		$profile->save();
+
 
 		$data['confirmation_code'] = $confirmation_code;
 
