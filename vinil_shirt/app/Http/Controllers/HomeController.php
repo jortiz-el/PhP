@@ -1,6 +1,7 @@
 <?php namespace Vinil\Http\Controllers;
 
 use Vinil\Productos;
+use Vinil\categorias;
 
 class HomeController extends Controller {
 

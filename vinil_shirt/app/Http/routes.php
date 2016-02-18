@@ -12,8 +12,13 @@
 */
 
 Route::get('/', 'WelcomeController@index');
-
 Route::get('home', 'HomeController@index');
+
+Route::get('producto/{id}', 'productoController@productos');
+Route::get('producto/{id}/sort', 'productoController@sort');
+Route::get('producto/{id}/descripcion', 'productoController@descripcion');
+Route::get('search', 'productoController@search');
+
 Route::get('perfil', 'profileController@getProfile');
 Route::get('perfil/editar', 'profileController@editProfile');
 Route::get('perfil/editar/save', 'profileController@saveProfile');

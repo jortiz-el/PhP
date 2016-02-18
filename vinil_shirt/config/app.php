@@ -144,6 +144,7 @@ return [
 		'Vinil\Providers\ConfigServiceProvider',
 		'Vinil\Providers\EventServiceProvider',
 		'Vinil\Providers\RouteServiceProvider',
+		'Vinil\Providers\categories',
 
 	],
 

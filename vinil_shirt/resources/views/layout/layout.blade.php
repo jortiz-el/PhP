@@ -31,7 +31,7 @@
 
 				
 
-				<form action="{{ url('/producto/search') }}" method="get" class="navbar-form navbar-left">
+				<form action="{{ url('/search') }}" method="get" class="navbar-form navbar-left">
 					<input type="search" name="search"  placeholder="Encuentra productos, diseños..." />
 					<input type="submit"  value=""/>
 				</form>
@@ -61,7 +61,10 @@
 					</li>
 					<li class="nivel1 col-md-3 dropdown"><a href="#" class="drpdown-toggle" data-toggle="dropdown" role="button">Productos</a>
 						<ul class="gris">
-							<li class="navli"><a href="{{ url('/producto/camiseta') }}">Camiseta corta</a></li>
+							@foreach ($categorias as $categoria)
+								<li class="navli"><a href="{{ url('/producto/'.$categoria->id) }}">{{ $categoria->nombre }}</a></li>
+							@endforeach
+							<!--
 							<li class="navli"><a href="{{ url('/producto/camisetach') }}">Camiseta chica</a></li>
 							<li class="navli"><a href="{{ url('/producto/musculosa') }}">musculosa</a></li>
 							<li class="navli"><a href="{{ url('/producto/gorrapl') }}">Gorra plana</a></li>
@@ -69,6 +72,7 @@
 							<li class="navli"><a href="{{ url('/producto/sudadera') }}">sudaderas</a></li>
 							<li class="navli"><a href="{{ url('/producto/sudaderacap') }}">sud. + capucha</a></li>
 							<li class="navli"><a href="{{ url('/producto/taza') }}">Tazas</a></li>
+						-->
 						</ul> 
 					</li>
 					<li class="nivel1 col-md-3 dropdown"><a href="#" class="drpdown-toggle" data-toggle="dropdown" role="button">Contacto</a></li>

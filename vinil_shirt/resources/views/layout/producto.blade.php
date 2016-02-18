@@ -4,7 +4,8 @@
 @section('content')
 		<section>
 			<section>
-				<form action="{{ url('/producto/sort') }}" >
+				@if (count($productos) > 0)	
+				<form action="{{ url('/producto/'.$productos[0]->categorias_id.'/sort') }}" >
 					<label>Ordenar Productos: </label>
 					<select name="sort" class="form-control" onchange="this.form.submit()">
 					  <option value=""></option>
@@ -12,17 +13,17 @@
 					  <option value="precio">Precio</option>
 					  <option value="descripcion">Descipcion</option>
 					</select>
-					<input type="hidden" name="id" value="{{ $productos[0]->categorias_id }}"/>
 				</form>
+				@endif
 				<header>
 					<h2>Productos<span> Vinil-Shirt</span></h2>
 				</header>	
 				<div class="container row">
 
+				@if (count($productos) > 0)	
 					@foreach ($productos as $producto)
 					@if ($producto->descuento === 1)
-						<form action="{{ url('/producto/descripcion') }}">
-							<input type="hidden" name="id_producto" value="{{ $producto->id }}">
+						<form action="{{ url('/producto/'.$producto->id.'/descripcion') }}">
 							<div class="col-md-4 out_margin">
 									<div class="ribbon"><span>OFERTA</span></div>
 								<div class="div-img">
@@ -35,8 +36,7 @@
 							</div>
 						</form>
 					@else
-						<form action="{{ url('/producto/descripcion') }}">
-							<input type="hidden" name="id_producto" value="{{ $producto->id }}">
+						<form action="{{ url('/producto/'.$producto->id.'/descripcion') }}">
 							<div class="col-md-4 out_margin" >
 								<div class="div-img" >
 									<button class="button_click" onclick="this.form.submit()">
@@ -49,9 +49,22 @@
 						</form>
 					@endif
 					@endforeach
+
 					<div id ="paginate" class="container">
 						{!! $productos->render() !!}
 					</div>
+				@else
+					<div class="row">
+						<div class="">
+							<img src="{{ asset('imagenes/logomail.png') }}" alt="vinil-shirt">
+						</div>
+						<div class="">
+							<h1 class="text-center " >no hay productos en esta categoria</h1>
+						</div>
+						
+					</div>
+					
+				@endif
 				</div>
 			</section>
 		</section>
