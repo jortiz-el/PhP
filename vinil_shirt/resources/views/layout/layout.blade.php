@@ -19,7 +19,7 @@
 		<header>
 			<section class="gris" id="geolo" >
 				<p >
-				<a href="{{url('/')}}" class ="white"><img class="middle" src="{{ asset('imagenes/geolo.png') }}" alt="img geolocalizacion"/>Encuentra tu tienda mas cercana</a>
+				<a href="{{url('/tienda')}}" class ="white"><img class="middle" src="{{ asset('imagenes/geolo.png') }}" alt="img geolocalizacion"/>Encuentra tu tienda mas cercana</a>
 				</p>
 			</section>
 			<section id="logo" class="cyan">
@@ -96,6 +96,11 @@
 				
 			</section>
 		</header>
+		@if (Session::has('message'))
+			<div class="alert alert-danger">
+				<ul>{{ Session::get('message')}}</ul>
+			</div>
+		@endif
 
 
 @yield('content')

@@ -26,6 +26,7 @@ class profileController extends Controller {
 	public function __construct(Guard $auth)
 	{
 		$this->auth = $auth;
+		$this->middleware('mail');
 		$this->middleware('auth');
 	}
 
@@ -63,7 +64,7 @@ class profileController extends Controller {
 		$user = $this->auth->user();
 		$user->delete();
 
-		return new RedirectResponse(url('/'));
+		return redirect('/')->with('message', 'Usuario eliminado gracias por haber formado parte de Vinil-Shirt');
 
 	}
 

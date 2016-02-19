@@ -40,6 +40,9 @@ $app->singleton(
 	'Illuminate\Contracts\Debug\ExceptionHandler',
 	'Vinil\Exceptions\Handler'
 );
+$app->register(
+	Artisaninweb\SoapWrapper\ServiceProvider::class
+);
 
 /*
 |--------------------------------------------------------------------------

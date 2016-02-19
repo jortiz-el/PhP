@@ -24,6 +24,11 @@ Route::get('perfil/editar', 'profileController@editProfile');
 Route::get('perfil/editar/save', 'profileController@saveProfile');
 Route::get('perfil/editar/delete', 'profileController@deleteProfile');
 
+
+Route::get('tienda', 'soapController@index');
+
+
+
 Route::get('register/verify/{confirmationCode?}', [
     'as' => 'confirmation_path',
     'uses' => 'RegistrationController@confirm'
