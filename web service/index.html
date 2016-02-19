@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0," user-sacalable="no">
+    <style type="text/css">
+      html, body { height: 100%; margin: 0; padding: 0; }
+      #map { height: 400px; width: 400px; }
+      .infowindow{background-color: #16a5a7; color:white; text-align: center; font-size: 16px;}
+      .infoimg {float: left;}
+    </style>
+  </head>
+  <body>
+    <div id="map" data-lat="40.4167754" data-lng="-3.7037901999999576" ></div>
+    <script type="text/javascript">
+    function $(id) {
+      return document.getElementById(id);
+    }
+
+
+    var map,
+        lat = parseFloat($('map').dataset.lat),
+        lng = parseFloat($('map').dataset.lng),
+        marker,
+        title = "Tienda Vinil-Shirt";
+    function initMap() {
+      map = new google.maps.Map($('map'), {
+        center: {lat: lat , lng: lng },
+        zoom: 5 //1:world, 5:landmass/continent, 10:city, 15:streets, 20 buildings
+      });
+      marker = new google.maps.Marker({
+        position: {lat: lat , lng: lng },
+        map: map,
+        draggable: false,
+        animation: google.maps.Animation.DROP,//BOUNCE
+        title: title,
+        icon:'logogoogle.png'
+      });
+
+      //animacion al hacer click en el icon
+      marker.addListener('click', toggleBounce);
+      function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+      }
+
+      //ventana de informacion al hacer doble click sobre el icono
+      marker.addListener('dblclick', liveWindow);
+      var contentstring = '<div class="infowindow">Vinil-Shirt</div><div><img src="fotoinfowindow.png" class="infoimg" /><p>Tu tienda de camisetas y mas productos personalizados.</p><p>Ven y disfruta de los mejores precios y ofertas para clientes.</p></div>';
+      var infowindow = new google.maps.InfoWindow({
+        content: contentstring
+      });
+      function liveWindow() {
+        infowindow.open(map, marker);
+      }
+    }
+
+    </script>
+    <!--key = credenciales google developer console, claves de API -->
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9mZ0MhE3N18hHHf0biTusN-uyqNsJXbI&callback=initMap">
+    </script>
+  </body>
+</html>
