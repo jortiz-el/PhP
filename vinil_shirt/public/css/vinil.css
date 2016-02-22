@@ -69,6 +69,40 @@ a.white {
 	max-width: 960px;
 	margin: auto; 
 } 
+/*----------geolocalizacion-----------*/
+#map {
+	width: 500px;
+	height: 500px;
+	float: left;
+	margin-right: 30px;
+}
+.infowindow{background-color: #16a5a7; color:white; text-align: center; font-size: 16px;}
+.infoimg {
+	float: left;
+}
+.geo_tittle {
+	text-align: center;
+	color: #16a5a7;
+	font-size: 2em;
+	margin: 12px;
+}
+.geo_info h2 {
+	font-size: 1.5em;
+	margin: 10px;
+}
+.geo_info {
+	padding: 10px;
+	margin-left: 50px;
+}
+.geo_img img {
+	width: 33%;
+}
+.geo_img {
+	vertical-align: middle;
+	text-align: center;
+}
+
+
 /*----------logo-----------*/
 #geolo  {
 	text-align: right;

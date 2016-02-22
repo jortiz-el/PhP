@@ -13,6 +13,7 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
         <link rel="stylesheet/less"  href="{{ asset('less/vinil.less') }}" />
 	<script src="{{ asset('js/eventos.js') }}"></script>
+	
 </head>
 <body>
 	<div id="container">
@@ -196,6 +197,7 @@
 	</div>
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		
 </body>
 </html>
